@@ -8,10 +8,11 @@ React + GraphQL + MongoDB
 1. npm install next@beta react react-dom --save
 1. npm install standard --save-dev
 1. npm install jest babel-jest --save-dev
+1. npm install express --save
 
 ## Tree
 
-> `tree -I 'node_modules|.next'`
+> `tree -I 'node_modules'`
 
 ```
 .
@@ -21,11 +22,13 @@ React + GraphQL + MongoDB
 │   └── layout.js
 ├── package-lock.json
 ├── package.json
-└── pages
-    ├── about
-    │   ├── index.js
-    │   └── me.js
-    ├── index.js
-    └── index.test.js
+├── pages
+│   ├── about
+│   │   ├── index.js
+│   │   └── me.js
+│   ├── index.js
+│   └── index.test.js
+└── server
+    └── index.js
 
 ```
