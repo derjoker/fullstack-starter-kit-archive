@@ -1,0 +1,16 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.wordWrap": "on",
+
+    // Controls the font size in pixels.
+    "editor.fontSize": 16,
+
+    // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+    "editor.tabSize": 2,
+    "workbench.startupEditor": "newUntitledFile",
+
+    // Javascript Standard Style
+    "javascript.validate.enable": false,
+    "standard.enable": true,
+    "standard.autoFixOnSave": true
+}
