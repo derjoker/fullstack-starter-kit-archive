@@ -4,6 +4,9 @@
   "description": "React + GraphQL + MongoDB",
   "main": "index.js",
   "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
     "test": "jest"
   },
   "repository": {
@@ -21,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/derjoker/fullstack-starter-kit/issues"
   },
-  "homepage": "https://github.com/derjoker/fullstack-starter-kit#readme"
+  "homepage": "https://github.com/derjoker/fullstack-starter-kit#readme",
+  "dependencies": {
+    "next": "^3.0.1-beta.21",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
 }
