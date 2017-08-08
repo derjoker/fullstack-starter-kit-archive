@@ -8,7 +8,9 @@ React + GraphQL + MongoDB
 1. npm install next@beta react react-dom --save
 1. npm install standard --save-dev
 1. npm install jest babel-jest --save-dev
-1. npm install express --save
+1. npm install express body-parser graphql apollo-server-express --save
+1. npm install graphql-tools --save-dev
+1. npm install nodemon --save-dev
 
 ## Tree
 
@@ -29,6 +31,7 @@ React + GraphQL + MongoDB
 │   ├── index.js
 │   └── index.test.js
 └── server
-    └── index.js
+    ├── index.js
+    └── schema.js
 
 ```
