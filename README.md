@@ -15,6 +15,14 @@ React + GraphQL + MongoDB
 .
 ├── LICENSE
 ├── README.md
+├── components
+│   └── layout.js
 ├── package-lock.json
-└── package.json
+├── package.json
+└── pages
+    ├── about
+    │   ├── index.js
+    │   └── me.js
+    └── index.js
+
 ```
