@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "standard && jest --watch"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,10 @@
     "next": "^3.0.1-beta.21",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "jest": "^20.0.4",
+    "standard": "^10.0.3"
   }
 }
