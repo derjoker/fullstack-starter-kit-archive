@@ -23,6 +23,7 @@ React + GraphQL + MongoDB
 ├── README.md
 ├── components
 │   └── layout.js
+├── nodemon.json
 ├── package-lock.json
 ├── package.json
 ├── pages
@@ -32,7 +33,11 @@ React + GraphQL + MongoDB
 │   ├── index.js
 │   └── index.test.js
 └── server
+    ├── connect.js
     ├── index.js
+    ├── model.js
+    ├── model.test.js
     └── schema.js
 
+4 directories, 15 files
 ```
