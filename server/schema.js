@@ -1,11 +1,6 @@
 const { makeExecutableSchema } = require('graphql-tools')
-const mongoose = require('mongoose')
 
-const user = mongoose.Schema({
-  name: String, email: String, age: Number
-})
-
-const User = mongoose.model('User', user)
+const { User } = require('./model')
 
 const typeDefs = `
 type User {

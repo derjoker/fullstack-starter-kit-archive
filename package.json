@@ -4,7 +4,7 @@
   "description": "React + GraphQL + MongoDB",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch server server/index.js",
+    "dev": "nodemon server/index.js",
     "build": "next build",
     "start": "next start",
     "test": "standard && jest --watch"
