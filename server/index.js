@@ -3,6 +3,9 @@ const bodyParser = require('body-parser')
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
 const next = require('next')
 
+const connect = require('./connect')
+connect()
+
 const schema = require('./schema')
 
 const dev = process.env.NODE_ENV !== 'production'

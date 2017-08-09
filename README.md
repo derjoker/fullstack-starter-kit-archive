@@ -11,6 +11,7 @@ React + GraphQL + MongoDB
 1. npm install express body-parser graphql apollo-server-express --save
 1. npm install graphql-tools --save-dev
 1. npm install nodemon --save-dev
+1. npm install mongoose --save
 
 ## Tree
 

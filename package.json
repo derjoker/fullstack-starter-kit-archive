@@ -30,6 +30,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "graphql": "^0.10.5",
+    "mongoose": "^4.11.6",
     "next": "^3.0.1-beta.21",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
