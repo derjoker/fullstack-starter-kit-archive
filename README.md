@@ -12,6 +12,8 @@ React + GraphQL + MongoDB
 1. npm install graphql-tools --save-dev
 1. npm install nodemon --save-dev
 1. npm install mongoose --save
+1. npm install react-styleguidist --save-dev
+1. npm install react-table --save
 
 ## Tree
 

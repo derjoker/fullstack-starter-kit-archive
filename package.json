@@ -4,6 +4,8 @@
   "description": "React + GraphQL + MongoDB",
   "main": "index.js",
   "scripts": {
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
     "dev": "nodemon server/index.js",
     "build": "next build",
     "start": "next start",
@@ -34,13 +36,15 @@
     "mongoose": "^4.11.6",
     "next": "^3.0.1-beta.21",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-table": "^6.5.3"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "graphql-tools": "^1.1.0",
     "jest": "^20.0.4",
     "nodemon": "^1.11.0",
+    "react-styleguidist": "^6.0.10",
     "standard": "^10.0.3"
   }
 }
