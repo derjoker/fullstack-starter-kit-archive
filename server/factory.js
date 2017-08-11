@@ -32,7 +32,6 @@ module.exports = function Facotry (db, name, schema, indexes = []) {
     const model = new Model(doc)
     const condition = pick(model, indexes)
     const found = await Model.findOne(condition)
-    // console.log(found)
     if (!found) return model.save()
     const update = defaults(found, doc)
     if (eq(update, found)) return found
@@ -42,6 +41,6 @@ module.exports = function Facotry (db, name, schema, indexes = []) {
   return {
     find: Model.find,
     update: _update,
-    insert: _insert
+    insert: docs => Array.isArray(docs) ? Promise.all(docs.map(_insert)) : _insert(docs)
   }
 }

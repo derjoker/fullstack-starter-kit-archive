@@ -26,13 +26,21 @@ describe('Model Factory', () => {
     const user = await User.insert({
       name: ' insert ', email: 'test', age: 7
     })
-    expect(user._id).toBeTruthy()
+    expect(user._id).toBeDefined()
     expect(user.name).toBe('insert')
     expect(user.email).toBe('test')
     expect(user.age).toBe(7)
   })
 
-  it('insert docs', async () => {})
+  it('insert docs', async () => {
+    const users = await User.insert([
+      {name: 'insert1', email: 'test'},
+      {name: 'insert2', email: 'test'}
+    ])
+    expect(Array.isArray(users)).toBeTruthy()
+    expect(users[0]._id).toBeDefined()
+    expect(users[1]._id).toBeDefined()
+  })
 
   it('update', async () => {
     const user = await User.insert({
