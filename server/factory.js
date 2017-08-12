@@ -1,4 +1,4 @@
-const { pick, omit, defaults, eq } = require('lodash')
+const { pick, omit, defaults, isEqual } = require('lodash')
 
 /*
  * to make use of `trim` or `required` from schema
@@ -19,7 +19,8 @@ module.exports = function Facotry (db, name, schema, indexes = []) {
     if (!doc._id) throw new Error('doc._id undefined')
 
     const model = new Model(doc)
-    const update = omit(model.toJSON(), indexes)
+    const _doc = model.toJSON()
+    const update = omit(_doc, indexes)
     return Model.findByIdAndUpdate(doc._id, update, {new: true})
   }
 
@@ -32,15 +33,33 @@ module.exports = function Facotry (db, name, schema, indexes = []) {
     const model = new Model(doc)
     const condition = pick(model, indexes)
     const found = await Model.findOne(condition)
+
     if (!found) return model.save()
-    const update = defaults(found, doc)
-    if (eq(update, found)) return found
-    else return _update(update)
+
+    const _doc = found.toJSON()
+    // defaults(object, [sources]) mutates object
+    const update = defaults({}, _doc, doc)
+    return isEqual(update, _doc) ? _doc : _update(update)
   }
 
   return {
     find: Model.find,
     update: _update,
-    insert: docs => Array.isArray(docs) ? Promise.all(docs.map(_insert)) : _insert(docs)
+    insert: async docs => {
+      if (Array.isArray(docs)) {
+        // in parallel [x]
+        // Promise.all(docs.map(_insert))
+
+        // one after another
+        const ret = []
+        for (let doc of docs) {
+          doc = await _insert(doc)
+          ret.push(doc)
+        }
+        return ret
+      }
+
+      return _insert(docs)
+    }
   }
 }

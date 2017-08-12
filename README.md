@@ -24,7 +24,10 @@ React + GraphQL + MongoDB
 ├── LICENSE
 ├── README.md
 ├── components
-│   └── layout.js
+│   ├── layout.js
+│   └── table
+│       ├── README.md
+│       └── Table.js
 ├── nodemon.json
 ├── package-lock.json
 ├── package.json
@@ -34,12 +37,15 @@ React + GraphQL + MongoDB
 │   │   └── me.js
 │   ├── index.js
 │   └── index.test.js
-└── server
-    ├── connect.js
-    ├── index.js
-    ├── model.js
-    ├── model.test.js
-    └── schema.js
+├── server
+│   ├── connect.js
+│   ├── factory.js
+│   ├── factory.test.js
+│   ├── index.js
+│   ├── model.js
+│   ├── model.test.js
+│   └── schema.js
+└── styleguide.config.js
 
-4 directories, 15 files
+5 directories, 20 files
 ```
