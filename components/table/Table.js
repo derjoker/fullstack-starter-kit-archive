@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactTable from 'react-table'
 
-import 'react-table/react-table.css'
-
 const Table = ({ data }) => {
   const columns = [
     {Header: 'Name', accessor: 'name', minWidth: 50},

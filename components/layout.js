@@ -7,10 +7,12 @@ export default ({ children, title = 'fullstack-starter-kit' }) => (
       <title>{ title }</title>
       <meta charSet='utf-8' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      <link rel='stylesheet' href='css/react-table.css' />
     </Head>
     <header>
       <nav>
         <Link href='/'><a>Home</a></Link> |
+        <Link href='/play'><a>Play</a></Link> |
         <Link href='/about'><a>About</a></Link> |
         <Link href='/about/me'><a>About/Me</a></Link>
       </nav>
