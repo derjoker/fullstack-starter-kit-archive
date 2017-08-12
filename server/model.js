@@ -1,12 +1,16 @@
 const mongoose = require('mongoose')
 
+const connect = require('./connect')
+const Factory = require('./factory')
+
+const db = connect()
+
 const user = mongoose.Schema({
-  name: String, email: String, age: Number
+  name: {type: String, trim: true},
+  email: String,
+  address: {type: String, trim: true},
+  age: Number
 })
 
-user.index({
-  name: 1, email: 1
-}, { unique: true })
-
 module.exports.user = user
-module.exports.User = mongoose.model('User', user)
+module.exports.User = Factory(db, 'User', user, ['name', 'email'])

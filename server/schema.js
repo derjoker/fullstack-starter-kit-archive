@@ -7,6 +7,7 @@ type User {
   id: ID!
   name: String!
   email: String!
+  address: String
   age: Int
 }
 
@@ -16,7 +17,7 @@ type Query {
 }
 
 type Mutation {
-  createUser (name: String!, email: String!, age: Int) : User
+  createUser (name: String!, email: String!, address: String, age: Int) : User
 }
 `
 
@@ -26,13 +27,11 @@ const resolvers = {
     users: (_, { name }) => User.find({ name: new RegExp(name) })
   },
   Mutation: {
-    createUser: async (_, { name, email, age }) => {
-      const user = new User({
-        name, email, age
+    createUser: async (_, { name, email, address, age }) => {
+      const user = await User.insert({
+        name, email, address, age
       })
-      const doc = await user.save()
-      console.log(doc)
-      return doc
+      return user
     }
   }
 }
