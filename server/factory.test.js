@@ -86,4 +86,14 @@ describe('Model Factory', () => {
     expect(user2.address).toBe('address') // trim address
     expect(user2.age).toBe(27) // update age
   })
+
+  it('fetch', async () => {
+    const users = await User.insert([
+      {name: 'fetch 1', email: 'email', age: 7},
+      {name: 'fetch 2', email: 'email', age: 7}
+    ])
+    const ids = users.map(user => user._id)
+    const found = await User.fetch(ids)
+    expect(found.map(user => user._id)).toEqual(ids)
+  })
 })

@@ -44,6 +44,9 @@ module.exports = function Facotry (db, name, schema, indexes = []) {
 
   return {
     find: Model.find,
+    fetch: (ids) => Model.find({
+      _id: {$in: ids}
+    }),
     update: _update,
     insert: async docs => {
       if (Array.isArray(docs)) {
