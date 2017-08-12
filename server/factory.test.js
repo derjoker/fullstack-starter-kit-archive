@@ -96,4 +96,13 @@ describe('Model Factory', () => {
     const found = await User.fetch(ids)
     expect(found.map(user => user._id)).toEqual(ids)
   })
+
+  it('find', async () => {
+    await User.insert({
+      name: 'find', email: 'email', age: 7
+    })
+    const users = await User.find({name: 'find'})
+    expect(Array.isArray(users)).toBeTruthy()
+    expect(users[0].name).toBe('find')
+  })
 })

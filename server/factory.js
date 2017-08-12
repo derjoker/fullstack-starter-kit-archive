@@ -43,7 +43,7 @@ module.exports = function Facotry (db, name, schema, indexes = []) {
   }
 
   return {
-    find: Model.find,
+    find: (conditions) => Model.find(conditions),
     fetch: (ids) => Model.find({
       _id: {$in: ids}
     }),
